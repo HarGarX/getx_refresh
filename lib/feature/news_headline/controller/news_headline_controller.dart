@@ -5,7 +5,7 @@ import '../../../core/repository/news_repository.dart';
 import '../../../core/repository/news_repository_impl.dart';
 
 class NewsHeadLineController extends GetxController {
-  late NewsRepository _newsRepository;
+  late NewsRepositoryImpl _newsRepository;
   NewsHeadLineController() {
     _newsRepository = Get.find<NewsRepositoryImpl>();
     loadNewsHeadLines();
@@ -16,7 +16,6 @@ class NewsHeadLineController extends GetxController {
   loadNewsHeadLines() async {
     showLoading();
     final result = await _newsRepository.getNewsHeadLine();
-    print(result);
     hideLoading();
     if (result != null) {
       articles = result.obs;

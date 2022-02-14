@@ -7,7 +7,7 @@ import '../model/news_response_model.dart';
 import 'news_repository.dart';
 
 class NewsRepositoryImpl implements NewsRepository {
-  late HttpService _httpService;
+  late HttpServiceImpl _httpService;
   NewsRepositoryImpl(
       // this._httpService,
       ) {
@@ -19,9 +19,7 @@ class NewsRepositoryImpl implements NewsRepository {
     try {
       final response =
           await _httpService.getRequest("/top-headlines?country=us");
-
       final paresedResponse = NewsResponseModel.fromJson(response.data);
-      print(paresedResponse);
       return paresedResponse.articles;
     } on Exception catch (e) {
       print(e);

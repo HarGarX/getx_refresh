@@ -5,7 +5,7 @@ part 'article_model.g.dart';
 @JsonSerializable()
 class ArticleModel {
   @JsonKey(name: "author")
-  String author;
+  String? author;
 
   @JsonKey(name: "title")
   String title;
@@ -23,7 +23,7 @@ class ArticleModel {
   String publishedAt;
 
   @JsonKey(name: "content")
-  String content;
+  String? content;
   ArticleModel({
     required this.author,
     required this.title,
