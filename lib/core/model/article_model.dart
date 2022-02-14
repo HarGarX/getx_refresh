@@ -17,7 +17,7 @@ class ArticleModel {
   String url;
 
   @JsonKey(name: "urlToImage")
-  String urlToImage;
+  String? urlToImage;
 
   @JsonKey(name: "publishedAt")
   String publishedAt;
